@@ -18,137 +18,135 @@ namespace Model;
 
 class Cat
 {
-    private $firstName;
-    private $age;
-    private $color;
-    private $sex;
-    private $race;
-    
-    
-    /**
-     * @return mixed
-     */
-    
-    public function __construct($firstname = NULL, $age= NULL, $color= NULL, $sex= NULL, $race= NULL)
-    {
-        $this->setFirstName($firstname);
-        $this->setAge($age);
-        $this->setColor($color);
-        $this->setSex($sex);
-        $this->setRace($race);
-        return $this; 
-    }
-    
-    
-    /**
-     * @return mixed
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
+  private $firstName;
+  private $age;
+  private $color;
+  private $sex;
+  private $race;
 
-    /**
-     * @return mixed
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
+  /**
+  * @return mixed
+  */
 
-    /**
-     * @return mixed
-     */
-    public function getSex()
-    {
-        return $this->sex;
-    }
+  public function __construct($firstname = NULL, $age= NULL, $color= NULL, $sex= NULL, $race= NULL)
+  {
+    $this->setFirstName($firstname);
+    $this->setAge($age);
+    $this->setColor($color);
+    $this->setSex($sex);
+    $this->setRace($race);
+    return $this;
+  }
 
-    /**
-     * @return mixed
-     */
-    public function getRace()
-    {
-        return $this->race;
-    }
 
-    /**
-     * @param mixed $firstName
-     */
-    public function setFirstName($firstName)
-    {
-        if ($firstName && is_string($firstName) && strlen($firstName) >= 3 && strlen($firstName) <= 20){
-            $this->firstName = $firstName;
-            return $this;
-        }
-        throw new \Exception("Invalid Firstname");
-    }
+  /**
+  * @return mixed
+  */
+  public function getFirstName()
+  {
+    return $this->firstName;
+  }
 
-    /**
-     * @param mixed $age
-     */
-    public function setAge($age)
-    {
-        if (is_int($age)){
-        $this->age = $age;
-        return $this;
-        }
-        throw new \Exception("Invalid Age");
-    }
+  /**
+  * @return mixed
+  */
+  public function getAge()
+  {
+    return $this->age;
+  }
 
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)
-    {
-        if ($color && is_string($color) && strlen($color) >= 3 && strlen($color) <= 10){
-            $this->color = $color;
-            return $this;
-        }
-        throw new \Exception("Invalid Color");
-    }
+  /**
+  * @return mixed
+  */
+  public function getColor()
+  {
+    return $this->color;
+  }
 
-    /**
-     * @param mixed $sex
-     */
-    public function setSex($sex)
-    {
-        if (($sex == 'male') || ($sex == 'female')){            
-            $this->sex = $sex;
-            return $this;
-        }
-        throw new \Exception("Invalid Sex");
-    }
+  /**
+  * @return mixed
+  */
+  public function getSex()
+  {
+    return $this->sex;
+  }
 
-    /**
-     * @param mixed $race
-     */
-    public function setRace($race)
-    {
-        if ($race && is_string($race) && strlen($race) >= 3 && strlen($race) <= 20){
-            $this->race = $race;
-            return $this;
-        }
-        throw new \Exception("Invalid Race");
-    }
+  /**
+  * @return mixed
+  */
+  public function getRace()
+  {
+    return $this->race;
+  }
 
-    public function getInfo() {
-        return [
-            'firstName' => $this->getFirstName(),
-            'age' => $this->getAge(),
-            'color' => $this->getColor(),
-            'sex' => $this->getSex(),
-            'race' => $this->getRace()
-        ];
+  /**
+  * @param mixed $firstName
+  */
+  public function setFirstName($firstName)
+  {
+    if ($firstName && is_string($firstName) && strlen($firstName) >= 3 && strlen($firstName) <= 20){
+      $this->firstName = $firstName;
+      return $this;
     }
+    throw new \Exception("Invalid Firstname");
+  }
+
+  /**
+  * @param mixed $age
+  */
+  public function setAge($age)
+  {
+    if (is_int($age)){
+      $this->age = $age;
+      return $this;
+    }
+    throw new \Exception("Invalid Age");
+  }
+
+  /**
+  * @param mixed $color
+  */
+  public function setColor($color)
+  {
+    if ($color && is_string($color) && strlen($color) >= 3 && strlen($color) <= 10){
+      $this->color = $color;
+      return $this;
+    }
+    throw new \Exception("Invalid Color");
+  }
+
+  /**
+  * @param mixed $sex
+  */
+  public function setSex($sex)
+  {
+    if (($sex == 'male') || ($sex == 'female')){
+      $this->sex = $sex;
+      return $this;
+    }
+    throw new \Exception("Invalid Sex");
+  }
+
+  /**
+  * @param mixed $race
+  */
+  public function setRace($race)
+  {
+    if ($race && is_string($race) && strlen($race) >= 3 && strlen($race) <= 20){
+      $this->race = $race;
+      return $this;
+    }
+    throw new \Exception("Invalid Race");
+  }
+
+  public function getInfo() {
+    return [
+      'firstName' => $this->getFirstName(),
+      'age' => $this->getAge(),
+      'color' => $this->getColor(),
+      'sex' => $this->getSex(),
+      'race' => $this->getRace()
+    ];
+  }
 }
-
-
