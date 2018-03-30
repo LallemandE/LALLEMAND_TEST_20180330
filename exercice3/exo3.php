@@ -12,18 +12,18 @@
  *
  */
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    
+
     $errorMessage = '';
-    
+
     $make = $_POST['Make'] ?? null;
-    
+
     // $the argument should be a string else I start to build an error message.
-    if (! $make || ! is_string($make)) {
+    if (! is_string($make)) {
         $errorMessage .= 'Invalid Make Parameter';
     }
-    
+
     $model = $_POST['Model'] ?? null;
-    
+
     // The model should be a string else I will add an error message.
     // if there is already something in $errorMessage, I had a "separator" before adding the new content.
     if (! is_string($model)) {
@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errorMessage .= ' / ';
         $errorMessage .= 'Invalid Make Parameter';
     }
-    
+
     $year = $_POST['Year'] ?? null;
-    
+
     // The year should be an integer else I will add an error message.
     // if there is already something in $errorMessage, I had a "separator" before adding the new content.
     if (! is_int($year)) {
@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errorMessage .= ' / ';
         $errorMessage .= 'Invalid Make Parameter';
     }
-    
+
     $colour = $_POST['Colour'] ?? null;
-    
+
     // The colour should be a string else I will add an error message.
     // if there is already something in $errorMessage, I had a "separator" before adding the new content.
     if (! is_string($colour)) {
@@ -51,14 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $errorMessage .= ' / ';
         $errorMessage .= 'Invalid Colour Parameter';
     }
-    
+
     // If the error message is empty
     if (strlen($errorMessage) == 0) {
         // It is here that we could code SQL query to update the database.
-        
+
         return "Request correctly executed !";
     }
-    
+
     return $errorMessage;
 }
 
